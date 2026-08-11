@@ -2,51 +2,51 @@
 #
 # Loaded in config/application.rb and exposed everywhere as
 # Rails.configuration.x.foundation (keys work as strings or symbols).
-# These are template placeholders. Run bin/rename to stamp a real
-# identity across this file, the README, and the web manifest before
-# shipping an app; editing them here by hand works too.
 shared:
   # Display name used in page titles, meta tags, and mail.
-  application_name: "Application"
+  application_name: "Harbor Roast"
 
   # Absolute URL or asset path for the product logo. Blank renders a
   # plain wordmark instead.
   logo_url: ""
 
   # Seed color the Material Design 3 token generator will derive light
-  # and dark palettes from.
-  brand_seed_color: "#6750A4"
+  # and dark palettes from. Coffee brown; the generator runs on Holodex,
+  # so this stays within the committed token palette contract.
+  brand_seed_color: "#6F4E37"
 
   # Fallbacks for pages that do not set their own title/description.
-  default_page_title: "Welcome"
-  default_page_description: "A production-ready Rails application."
+  default_page_title: "Harbor Roast — small-batch coffee"
+  default_page_description: "Small-batch roasted coffee, shipped from our roastery. Browse the catalog, build a cart, and check out as a guest."
 
   # Absolute URL of the default Open Graph / social sharing image.
   # Blank omits the og:image tag.
   default_og_image_url: ""
 
-  # Public social profiles, e.g. { github: "https://github.com/example" }.
-  # Empty means no social links are rendered.
+  # Public social profiles. Empty means no social links are rendered.
   social_links: {}
 
   # Operator mailboxes surfaced in support links and legal pages.
-  support_email: "support@example.com"
-  legal_email: "legal@example.com"
+  support_email: "orders@harborroast.example"
+  legal_email: "legal@harborroast.example"
 
   # Canonical production domain, no scheme. Used for sitemaps and
-  # absolute URLs in mail.
-  domain: "example.com"
+  # absolute URLs in mail. Placeholder TLD: the operator must set the
+  # real roastery domain before a production launch.
+  domain: "harborroast.example"
 
   # Exact storefront feature flag (SPEC M8): only the YAML boolean true
   # enables its routes, navigation, models' entry points, and production
-  # readiness requirement. Any other value is disabled. Commerce-oriented
-  # apps generated from this foundation are ready to customize by default.
+  # readiness requirement. Any other value is disabled.
   storefront_enabled: true
 
-  # M8 deliberately supports digital fulfillment only. Inventory can model
-  # limited licenses/capacity. A physical-goods app must first implement
-  # address collection, shipping/tax calculation, and matching legal terms;
-  # readiness rejects any unimplemented mode instead of silently shipping.
+  # M8 deliberately supports digital fulfillment only in the foundation.
+  # A physical-goods app must first implement address collection,
+  # shipping/tax calculation, and matching legal terms; readiness rejects
+  # any unimplemented mode instead of silently shipping. The hosted
+  # preview therefore demonstrates the full buy flow through the local
+  # test simulator (no card data), and shipping is the documented
+  # production step in docs/STOREFRONT.md before going live.
   storefront_fulfillment_mode: "digital"
 
   # A live production storefront refuses readiness until an operator has
@@ -56,7 +56,10 @@ shared:
 
   # Exact lowercase HTTPS hosts permitted for browser-rendered external
   # product images. Empty (the safe default) requires Active Storage uploads.
-  storefront_external_image_hosts: []
+  # The demo catalog uses Unsplash-hosted coffee photos; an operator can
+  # replace them with uploaded images at any time.
+  storefront_external_image_hosts:
+    - "images.unsplash.com"
 
   # Host capacity ceilings for /healthcheck disk and memory probes (percent used).
   # Probes pass with an informational note when the platform cannot report figures.
