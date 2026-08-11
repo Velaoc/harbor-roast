@@ -1,15 +1,19 @@
 <!-- foundation:identity -->
-# Application
+# Harbor Roast
 
-A production-ready Rails application.
+An online store for a small-batch coffee roaster. Browse the catalog with
+photos and prices, build a cart, and check out as a guest. Signed-in
+customers can see their past orders.
 
-- Site: https://example.com
-- Support: support@example.com
+- Demo: https://harbor-roast-<slug>.demo.holode.xyz (wipes daily)
+- Repo: https://github.com/Velaoc/harbor-roast
+- Support: orders@harborroast.example
 <!-- /foundation:identity -->
 
-The block above is the product identity. `bin/rename` rewrites it, together
-with `config/foundation.yml`; everything else in this file documents the
-foundation the application is built on.
+The block above is the product identity. The application is generated from
+Vela's Ruby on Rails production foundation, stamped for Harbor Roast, and
+customized with a coffee catalog. Everything else in this file documents
+the foundation the application is built on.
 
 ## What this is
 
