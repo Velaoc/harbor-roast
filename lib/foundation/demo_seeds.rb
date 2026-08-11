@@ -11,19 +11,58 @@ module Foundation
   module DemoSeeds
     PRODUCTS = [
       {
-        slug: "starter-license", sku: "DEMO-STARTER", name: "Starter license",
-        description: "Demo catalog row: a single-seat license for the example product.",
-        price_cents: 2_900, position: 0, inventory_quantity: 100
+        slug: "harbor-harbor-espresso", sku: "HR-ESP-001", name: "Harbor Espresso",
+        description: "A dark, syrupy espresso blend built to cut through milk. Cocoa and toasted hazelnut, with a long bittersweet finish.",
+        price_cents: 1_650, position: 0, inventory_quantity: 80,
+        roast_level: "dark", origin: "Brazil / Sumatra blend",
+        tasting_notes: "Cocoa, toasted hazelnut, brown sugar",
+        bag_weight_grams: 340,
+        image_url: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=80"
       },
       {
-        slug: "team-license", sku: "DEMO-TEAM", name: "Team license",
-        description: "Demo catalog row: a five-seat license for the example product.",
-        price_cents: 9_900, position: 1, inventory_quantity: 50
+        slug: "morning-light", sku: "HR-FLT-001", name: "Morning Light",
+        description: "A bright, clean filter roast for pour-over and drip. Juicy acidity with orange zest and a honeyed sweetness.",
+        price_cents: 1_750, position: 1, inventory_quantity: 60,
+        roast_level: "light", origin: "Ethiopia, Yirgacheffe",
+        tasting_notes: "Orange zest, jasmine, honey",
+        bag_weight_grams: 340,
+        image_url: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
       },
       {
-        slug: "reference-guide", sku: "DEMO-GUIDE", name: "Reference guide",
-        description: "Demo catalog row: a downloadable guide delivered after checkout.",
-        price_cents: 1_500, position: 2, inventory_quantity: 250
+        slug: "foghorn-blend", sku: "HR-BLN-001", name: "Foghorn Blend",
+        description: "Our flagship house blend — balanced, approachable, and dependable. Medium roast with milk chocolate and caramel.",
+        price_cents: 1_500, position: 2, inventory_quantity: 120,
+        roast_level: "medium", origin: "Colombia / Guatemala blend",
+        tasting_notes: "Milk chocolate, caramel, red apple",
+        bag_weight_grams: 340,
+        image_url: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        slug: "tidewater-decaf", sku: "HR-DEC-001", name: "Tidewater Decaf",
+        description: "Swiss water-processed decaf that keeps the flavor. Smooth, nutty, and gentle enough for after dinner.",
+        price_cents: 1_600, position: 3, inventory_quantity: 90,
+        roast_level: "medium-dark", origin: "Colombia (Swiss water process)",
+        tasting_notes: "Almond, cocoa, vanilla",
+        bag_weight_grams: 340,
+        image_url: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        slug: "breakwater-single-origin", sku: "HR-SIN-001", name: "Breakwater Single Origin",
+        description: "A delicate single origin from the highlands of Kenya. Complex, winey, and bright — for the slow mornings.",
+        price_cents: 1_950, position: 4, inventory_quantity: 45,
+        roast_level: "medium-light", origin: "Kenya, Nyeri",
+        tasting_notes: "Blackcurrant, grapefruit, raw sugar",
+        bag_weight_grams: 340,
+        image_url: "https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        slug: "nightwatch-espresso", sku: "HR-ESP-002", name: "Nightwatch Espresso",
+        description: "An extra-dark roast for the late shift. Smoky, bold, and low-acid, with dark chocolate and molasses.",
+        price_cents: 1_700, position: 5, inventory_quantity: 70,
+        roast_level: "dark", origin: "Sumatra, Mandheling",
+        tasting_notes: "Dark chocolate, molasses, cedar",
+        bag_weight_grams: 340,
+        image_url: "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=1200&q=80"
       }
     ].freeze
 
