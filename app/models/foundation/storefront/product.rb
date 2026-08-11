@@ -8,6 +8,8 @@ module Foundation
     class Product < ApplicationRecord
       self.table_name = "storefront_products"
 
+      ROAST_LEVELS = %w[light medium-light medium medium-dark dark].freeze
+
       IMAGE_TYPES = %w[image/png image/jpeg image/webp image/gif].freeze
       MAX_IMAGE_BYTES = 8.megabytes
 
@@ -21,6 +23,9 @@ module Foundation
       validates :slug, format: { with: /\A[a-z0-9]+(?:-[a-z0-9]+)*\z/ }, uniqueness: true
       validates :sku, format: { with: /\A[A-Z0-9][A-Z0-9._-]*\z/ }, uniqueness: true
       validates :price_cents, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 999_999_999 }
+      validates :roast_level, inclusion: { in: ROAST_LEVELS }
+      validates :origin, :tasting_notes, length: { maximum: 200 }
+      validates :bag_weight_grams, numericality: { only_integer: true, greater_than: 0, less_than_or_equal_to: 10_000 }
       validates :inventory_quantity, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 1_000_000 }
       validates :position, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 1_000_000 }
       validates :currency, format: { with: /\A[A-Z]{3}\z/ }
