@@ -1,3 +1,20 @@
+/* Harbor Roast storefront */
+.storefront-product-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+.storefront-product-detail__image { border-radius: var(--md-shape-large, 16px); overflow: hidden; }
+.storefront-product-detail__img { width: 100%; height: auto; display: block; object-fit: cover; aspect-ratio: 4 / 3; }
+.storefront-product-detail__body { display: flex; flex-direction: column; gap: 1.25rem; }
+.storefront-product-detail__price { font-size: 1.5rem; font-weight: 700; }
+.storefront-quantity { width: 6rem; }
+.storefront-order-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+@media (max-width: 839px) {
+  .storefront-product-detail { grid-template-columns: 1fr; }
+}
 /*
  * This is a manifest file that'll be compiled into application.css.
  *
