@@ -1,0 +1,76 @@
+{
+  "name": "Harbor Roast",
+  "purpose": "Online storefront for Harbor Roast, a small-batch coffee roaster. Visitors browse roasted coffees with photos and prices, build a cart, and check out as guests; signed-in customers can see their past orders.",
+  "actors": [
+    "Guest shopper (can buy without an account)",
+    "Signed-in customer (sees past orders)",
+    "Shop admin (manages products and orders)"
+  ],
+  "entities": [
+    {
+      "name": "Product",
+      "relationships": [
+        "has many order_items",
+        "belongs to a category",
+        "has roast profile, tasting notes, price, and photo"
+      ]
+    },
+    {
+      "name": "Category",
+      "relationships": [
+        "has many products"
+      ]
+    },
+    {
+      "name": "Order",
+      "relationships": [
+        "has many order_items",
+        "belongs to a customer",
+        "has status, totals, and checkout email"
+      ]
+    },
+    {
+      "name": "OrderItem",
+      "relationships": [
+        "belongs to an order",
+        "belongs to a product",
+        "records quantity and unit price"
+      ]
+    },
+    {
+      "name": "Customer",
+      "relationships": [
+        "has many orders",
+        "backed by OAuth account (Google/GitHub) with email"
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Browse catalog",
+      "description": "Visitor sees the product grid with photos, prices, and roast profiles; can filter by category and open a product detail page"
+    },
+    {
+      "name": "Cart and checkout",
+      "description": "Add items to cart, adjust quantities, then check out guest-first with just an email; payment completes through the local test simulator in preview"
+    },
+    {
+      "name": "Order history",
+      "description": "Signed-in customers see their past orders with items, totals, and status; guests reach their receipt via a signed, expiring link"
+    },
+    {
+      "name": "Admin management",
+      "description": "Admin manages products (photo, price, roast profile, category, availability) and views orders"
+    }
+  ],
+  "modules": [
+    "storefront"
+  ],
+  "integrations": [
+    {
+      "name": "Stripe",
+      "demo_adapter": true
+    }
+  ],
+  "seed_demo": "Eight seeded coffees across four categories (Espresso, Filter, Decaf, Merch) with photos, roast profiles, tasting notes, and prices; one seeded order for a sample customer so order history is visible in the demo."
+}
