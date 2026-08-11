@@ -889,6 +889,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_08_11_140000) do
     t.string "currency", limit: 3, default: "USD", null: false
     t.text "description", default: "", null: false
     t.string "image_url"
+    t.string "roast_level", default: "medium", null: false
+    t.string "origin", default: "", null: false
+    t.string "tasting_notes", default: "", null: false
+    t.integer "bag_weight_grams", default: 340, null: false
     t.integer "inventory_quantity", default: 0, null: false
     t.string "name", null: false
     t.integer "position", default: 0, null: false
